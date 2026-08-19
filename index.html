@@ -17,36 +17,34 @@
         .invitation-card {
             position: relative;
             display: inline-block;
-            max-width: 100%;
+            width: 100%;
+            max-width: 600px;
         }
         .invitation-card img {
             width: 100%;
-            max-width: 600px; /* Constrains card size for neat display */
             height: auto;
             display: block;
         }
-        /* Clickable area positioned precisely over "Click Here to View Location" */
-        .location-btn {
+        .svg-overlay {
             position: absolute;
-            bottom: 1.5%;
-            left: 10%;
-            width: 80%;
-            height: 7%;
-            display: block;
-            cursor: pointer;
-            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
 
     <div class="invitation-card">
-       <!--img src="Invitation.jpg.jpeg" alt="Engagement Invitation">
-        <a href="https://maps.app.goo.gl/kFBSm6T3jAxyxvsU7" target="_blank" class="location-btn" title="Click Here to View Location"></a> -->
-        <img src="Invitation.jpg.jpeg" usemap="#image-map">
-        <map name="image-map">
-            <area target="_blank" alt="Thangam Mahal" title="Thangam Mahal" href="https://maps.app.goo.gl/9anNHNfCJ6iMsRZG9" coords="1528,2177,241" shape="circle">
-        </map>
+        <img src="Invitation.jpg.jpeg" alt="Engagement Invitation">
+        
+        <!-- SVG coordinates match the original image resolution and scale automatically -->
+        <svg class="svg-overlay" viewBox="0 0 3000 2400" preserveAspectRatio="xMidYMid meet">
+            <a href="https://maps.app.goo.gl/9anNHNfCJ6iMsRZG9" target="_blank" title="Thangam Mahal">
+                <circle cx="1528" cy="2177" r="241" fill="transparent" />
+            </a>
+        </svg>
     </div>
 
 </body>
